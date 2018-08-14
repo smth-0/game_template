@@ -1,6 +1,6 @@
 export class Info {
     constructor(playerX, playerY) {
-        this.text = `PlayerX: ${playerX}\nPlayerY: ${playerY}`
+        this.text = `PlayerX: ${playerX}\nPlayerY: ${playerY}\nHeight`+window.innerHeight+'\nWight'+window.innerWidth
     }
 
     draw() {

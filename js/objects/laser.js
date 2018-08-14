@@ -1,11 +1,10 @@
 import * as PIXI from "pixi.js";
 
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes
-export class Player {
+export class Laser {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.r = 10;
+        this.r = 3;
         this.f = 4;
     }
 
@@ -13,7 +12,7 @@ export class Player {
         // http://pixijs.download/dev/docs/PIXI.Graphics.html
         const graphics = new PIXI.Graphics();
 
-        graphics.beginFill(0xff0000);
+        graphics.beginFill(0x000FFF);
         graphics.drawCircle(this.x, this.y, this.r);
         //graphics.drawSquare(this.x, this.y, 10, 10);
         graphics.endFill();
@@ -30,7 +29,7 @@ export class Player {
     };
 
     go_up = () => {
-            this.y -= this.f
+        this.y -= this.f
     };
 
     go_down = () => {

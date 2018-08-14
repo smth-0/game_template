@@ -11,17 +11,17 @@ const ratio = window.devicePixelRatio;
 const world = new World();
 
 // Берём размеры экрана
-const logicalWidth = window.innerWidth;
-const logicalHeight = window.innerHeight;
+let logicalWidth = window.innerWidth;
+let logicalHeight = window.innerHeight;
 
 // http://pixijs.download/dev/docs/PIXI.Application.html
-const renderer = PIXI.autoDetectRenderer(
+let renderer = PIXI.autoDetectRenderer(
     logicalWidth,
     logicalHeight,
-    {backgroundColor: 0x00000, resolution: 2});
+    {backgroundColor: 0xFFFFFF, resolution: 2});
 
 // Нажата ли кнопка
-const keys = {"w": false, "s": false, "a": false, "d": false};
+const keys = {"w": false, "s": false, "a": false, "d": false, "r": false};
 
 function animate() {
     // Позволяет рисовать каждый тик
@@ -53,6 +53,26 @@ document.addEventListener('keyup', (ev) => {
     keys[ev.key] = false;
 }, false);
 
+window.onresize = function(event) {
+    location.reload();
+};
+document.addEventListener('mousemove', onMouseUpdate, false);
+document.addEventListener('mouseenter', onMouseUpdate, false);
+
+function onMouseUpdate(e) {
+    let x = e.pageX;
+    let y = e.pageY;
+    console.log(x+' '+y);
+
+};
+
+function getMouseX() {
+    return x;
+};
+
+function getMouseY() {
+    return y;
+};
 // Начинаем рисовать!
 animate();
 
