@@ -1,6 +1,8 @@
+import {World} from "./world";
+
 export class Info {
-    constructor(playerX, playerY) {
-        this.text = `PlayerX: ${playerX}\nPlayerY: ${playerY}\nHeight`+window.innerHeight+'\nWight'+window.innerWidth
+    constructor(playerX, playerY, mousex, mousey, size) {
+        this.text = `PlayerX: ${playerX}\nPlayerY: ${playerY}\nHeight: `+window.innerHeight+'\nWight: '+window.innerWidth+'\nmouse x: '+mousex+'\nmouseY: '+mousey+'\nnumber of bullets: '+size
     }
 
     draw() {
