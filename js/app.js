@@ -59,14 +59,12 @@ window.onresize = function(event) {
     renderer.resize(window.innerWidth,window.innerHeight);
 };
 // document.addEventListener('mousemove', onMouseUpdate, false);
-// document.addEventListener('mouseenter', onMouseUpdate, false);
+//document.addEventListener('mouseenter', onMouseUpdate, false);
 //
 // function onMouseUpdate(e) {
 //     world.mouseX = e.x;
 //     world.mouseY = e.y;
-//     console.log('Mouse at  x:'+world.mouseX+' and Y: '+world.mouseY);
-//     document.getElementById("main").appendChild(renderer.view);
-//     renderer.resize(window.innerWidth,window.innerHeight);
+// //    console.log('Mouse at  x:'+world.mouseX+' and Y: '+world.mouseY);
 // };
 
 document.addEventListener('click', (ev) => {
@@ -91,7 +89,7 @@ window.onload = function () {
     // Достаём <div id="main"/> и суём туда canvas из renderer
     // View Page Source если не веришь
     document.getElementById("main").appendChild(renderer.view);
-    renderer.resize(window.innerWidth,window.innerHeight);
+    // renderer.resize(window.innerWidth,window.innerHeight);
 
     // Устанавливаем нужные параметры высоты и ширины для канваса
     resizeCanvas();

@@ -6,14 +6,14 @@ export class Player {
         this.x = x;
         this.y = y;
         this.r = 10;
-        this.f = 4;
+        this.f = 8;
     }
 
     draw() {
         // http://pixijs.download/dev/docs/PIXI.Graphics.html
         const graphics = new PIXI.Graphics();
 
-        graphics.beginFill(0xff0000);
+        graphics.beginFill(0xffff00);
         graphics.drawCircle(this.x, this.y, this.r);
         //graphics.drawSquare(this.x, this.y, 10, 10);
         graphics.endFill();
