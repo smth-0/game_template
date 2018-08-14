@@ -24,13 +24,13 @@ export class World {
                         this.isShowData = !this.isShowData;
                         */
                     case "a":
-                        this.player.x < 1+this.player.r+this.multyplier ? this.player.set_cords(10+this.player.r+this.multyplier, this.player.y) : this.player.go_left();
+                        this.player.x < 1+this.player.r+this.multyplier ? this.player.set_cords(1+this.player.r+this.multyplier, this.player.y) : this.player.go_left();
                         break;
                     case "d":
-                        this.player.x > window.innerWidth-this.player.r-this.multyplier-1 ? this.player.set_cords(window.innerWidth-this.player.r-this.multyplier-10, this.player.y) : this.player.go_right();
+                        this.player.x > (window.innerWidth-this.player.r-this.multyplier-1)/2 ? this.player.set_cords((window.innerWidth-this.player.r-this.multyplier-1)/2, this.player.y) : this.player.go_right();
                         break;
                     case "s":
-                        this.player.y > window.innerHeight-this.player.r-this.multyplier-1 ? this.player.set_cords(this.player.x, window.innerHeight-this.player.r-this.multyplier-10) : this.player.go_down();
+                        this.player.y > (window.innerHeight-this.player.r-this.multyplier-1)/2 ? this.player.set_cords(this.player.x, (window.innerHeight-this.player.r-this.multyplier-10)/2) : this.player.go_down();
                         break;
                     case "w":
                         this.player.y < this.player.r+1+this.multyplier ?  this.player.set_cords(this.player.x, this.player.r+10+this.multyplier) : this.player.go_up();

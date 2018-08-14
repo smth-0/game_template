@@ -18,7 +18,7 @@ let logicalHeight = window.innerHeight;
 let renderer = PIXI.autoDetectRenderer(
     logicalWidth,
     logicalHeight,
-    {backgroundColor: 0xFFFFFF, resolution: 2});
+    {backgroundColor: 0x00000F, resolution: 2});
 
 // Нажата ли кнопка
 const keys = {"w": false, "s": false, "a": false, "d": false, "r": false};
@@ -54,7 +54,8 @@ document.addEventListener('keyup', (ev) => {
 }, false);
 
 window.onresize = function(event) {
-    location.reload();
+    //location.reload();
+    resizeCanvas();
 };
 document.addEventListener('mousemove', onMouseUpdate, false);
 document.addEventListener('mouseenter', onMouseUpdate, false);
@@ -63,7 +64,8 @@ function onMouseUpdate(e) {
     let x = e.pageX;
     let y = e.pageY;
     console.log(x+' '+y);
-
+    renderer.resize(window.innerWidth,window.innerHeight);
+    world.laser.set_cords(x/2,y/2);
 };
 
 function getMouseX() {
@@ -76,6 +78,13 @@ function getMouseY() {
 // Начинаем рисовать!
 animate();
 
+function resizeCanvas(){
+    canvas.width = window.innerWidth/2;
+    canvas.height = window.innerHeight/2;
+    canvas.style.width = window.innerWidth/2 + 'px';
+    canvas.style.height = window.innerHeight/2 + 'px';
+};
+
 // Wait for document loaded
 window.onload = function () {
     // Достаём <div id="main"/> и суём туда canvas из renderer
@@ -83,8 +92,5 @@ window.onload = function () {
     document.getElementById("main").appendChild(renderer.view);
     // Устанавливаем нужные параметры высоты и ширины для канваса
     const canvas = renderer.view;
-    canvas.width = logicalWidth * 2;
-    canvas.height = logicalHeight * 2;
-    canvas.style.width = logicalWidth + 'px';
-    canvas.style.height = logicalHeight + 'px';
+    resizeCanvas();
 };
