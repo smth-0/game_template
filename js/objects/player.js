@@ -7,13 +7,19 @@ export class Player {
         this.y = y;
         this.r = 10;
         this.f = 8;
+        this.hp = 10;
     }
 
     draw() {
         // http://pixijs.download/dev/docs/PIXI.Graphics.html
         const graphics = new PIXI.Graphics();
 
-        graphics.beginFill(0xffff00);
+        this.hp > 5 ? this.r=this.hp : this.r = 5;
+        this.hp > 25 ? this.hp=25 : null;
+        this.f = 25-this.r;
+
+        graphics.beginFill(0xb2ff00);
+
         graphics.drawCircle(this.x, this.y, this.r);
         //graphics.drawSquare(this.x, this.y, 10, 10);
         graphics.endFill();

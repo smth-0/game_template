@@ -93,4 +93,5 @@ window.onload = function () {
 
     // Устанавливаем нужные параметры высоты и ширины для канваса
     resizeCanvas();
+    renderer.resize(window.innerWidth,window.innerHeight);
 };
